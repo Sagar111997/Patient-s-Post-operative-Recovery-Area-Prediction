@@ -1,0 +1,223 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNw1oEII8lFabyd9AYV+pC4",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Sagar111997/Patient-s-Post-operative-Recovery-Area-Prediction/blob/main/mock%20test%201%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "WFUOQ6XsaMXO"
+      },
+      "outputs": [],
+      "source": [
+        "### 1\n",
+        "def get_even_numbers(numbers):\n",
+        "    return [num for num in numbers if num % 2 == 0]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "input_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n",
+        "output_list = get_even_numbers(input_list)\n",
+        "print(output_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fHfo4LECaP-H",
+        "outputId": "6ae6a2ef-501e-414d-a636-9700ac2339c8"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[2, 4, 6, 8, 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#2\n",
+        "import time\n",
+        "\n",
+        "def timer(func):\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        start_time = time.time()\n",
+        "        result = func(*args, **kwargs)\n",
+        "        end_time = time.time()\n",
+        "        execution_time = end_time - start_time\n",
+        "        print(f\"Execution time: {execution_time:.5f} seconds\")\n",
+        "        return result\n",
+        "    return wrapper\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "hN-ykTPlabm4"
+      },
+      "execution_count": 3,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "@timer\n",
+        "def my_function():\n",
+        "    time.sleep(2)"
+      ],
+      "metadata": {
+        "id": "xkFsEz5LbxT4"
+      },
+      "execution_count": 4,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_function()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NdYjLU9Gb6U1",
+        "outputId": "cad133c8-5b8b-4dec-ad7c-b0af2a6153af"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Execution time: 2.00208 seconds\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "##3\n",
+        "def calculate_mean(numbers):\n",
+        "    total = sum(numbers)\n",
+        "    count = len(numbers)\n",
+        "    mean = total / count\n",
+        "    return mean"
+      ],
+      "metadata": {
+        "id": "iieJrEwUcMcM"
+      },
+      "execution_count": 6,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data = [10, 15, 20, 25, 30]\n",
+        "mean_value = calculate_mean(data)\n",
+        "print(\"Mean:\", mean_value)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UD-hOPm4dDq5",
+        "outputId": "8f45ceba-9a14-43a6-9a89-2cbe3c1bfee7"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mean: 20.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "##4\n",
+        "from scipy import stats\n",
+        "\n",
+        "def perform_hypothesis_test(sample1, sample2):\n",
+        "    t_statistic, p_value = stats.ttest_ind(sample1, sample2)\n",
+        "    return p_value"
+      ],
+      "metadata": {
+        "id": "igRCAdCYdqZS"
+      },
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sample1 = [5, 10, 15, 20, 25]\n",
+        "sample2 = [10, 20, 30, 40, 50]\n",
+        "p_value = perform_hypothesis_test(sample1, sample2)\n",
+        "print(\"P-value:\", p_value)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5YyC_dnWdro2",
+        "outputId": "3015ad4b-8422-43d7-cad5-f6a03ed1bb7d"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "P-value: 0.09434977284243756\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "qRPRRCC_dxcU"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
